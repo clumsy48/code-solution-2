@@ -47,18 +47,13 @@ cache_Master_Table (to store daily basis records coming from various merchants)
 
 
 Component Design:
-rt-message-publisher-service
+    
+     rt-data-collector-service
+     rt-message-publisher-service
      Incoming-Data : Merchant Id , Page Url , UserInfo (post request by Merchant)
-     Purpose       : pasrse into simplified message and pushed to subscriber(can use aws SNS here).
+     Purpose  
      
-rt-data-collector-service
-     Model         : Publisher-Subcsriber Model (Useful in case of reprocess)
-     Incoming-Data : Merchant Id , Page Url , UserInfo (message published by rt-message-publisher-service)
-     Purpose       : collect data comming from various merchants ,parses it and stores in DB
-     Scaling       : horizontal scaling is a bad idea , since there are so many data coming update database from various instances will
-                    lead to data inconsistency.
-                    So ,vertical scaling will the preferred choice .
-              
+     rt-data-collector-service
      
      Model         : Publisher-Subcsriber Model (Useful in case of reprocess)
      Incoming-Data : Merchant Id , Page Url , UserInfo (message published by rt-message-publisher-service)
