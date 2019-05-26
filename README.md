@@ -8,8 +8,8 @@
 4) 10% users of every client active wihtin a min.
 
 **Capacity Estimation and Constraints:**
-`1)Traffic estimates - 1000,00,00,00,00,000 / 1440 ~ 100,00,00,000 per minutes .
-2)Storage estimates : 360tb (Defined in Database design section)`
+1) Traffic estimates - 1000,00,00,00,00,000 / 1440 ~ 100,00,00,000 per minutes .
+2) Storage estimates : 360tb (Defined in Database design section)
 
 **Features:**
 `1)Count of users visted a page by minute,day,week,month,year.
