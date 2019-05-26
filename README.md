@@ -1,23 +1,23 @@
 # code-solution-2
-HLD for Google Analytics System
+## HLD for Google Analytics System
 
-Assunptions:
-1) No. of Active clients + clients added in next 10 years = 100,000.
-2) Users of every Client + Users added in next years = 100,00,000.
-3) User from same location visted multiple times within 1 min is counted as single visit.
-4) 10% users of every client active wihtin a min.
+**Assunptions:**
+`1) No. of Active clients + clients added in next 10 years = 100,000.
+`2) Users of every Client + Users added in next years = 100,00,000.
+`3) User from same location visted multiple times within 1 min is counted as single visit.
+`4) 10% users of every client active wihtin a min.
 
-Capacity Estimation and Constraints:
-1)Traffic estimates - 1000,00,00,00,00,000 / 1440 ~ 100,00,00,000 per minutes .
-2)Storage estimates : 
+**Capacity Estimation and Constraints:**
+`1)Traffic estimates - 1000,00,00,00,00,000 / 1440 ~ 100,00,00,000 per minutes .
+`2)Storage estimates : 
 
-Features:
-1)Count of users visted a page by minute,day,week,month,year.
+**Features:**
+`1)Count of users visted a page by minute,day,week,month,year.
 2)Count of users by region , Browser , operating sytem, Gender , Age group (0-10,11-17,18-30,31-40,above 40).
-3)Count of new users vs existing users.
+3)Count of new users vs existing users.`
 
-Database Design :
-Since we are dealing with large volumes/scale of data and it needs to be highly available , therefore NoSql DyanmoDb will be ideal
+**Database Design :**
+`Since we are dealing with large volumes/scale of data and it needs to be highly available , therefore NoSql DyanmoDb will be ideal
 choice for it (there are other nosql database also available like Apache Cassandra).
 
 Write per day ~ 1 billion
@@ -43,9 +43,9 @@ Size of each row :
 Size of table in in one day ~ 1000,00,000 * 107 bytes ~= 100gb / day.
 in next 10 year ~= 360tb
 
-cache_Master_Table (to store daily basis records coming from various merchants)
+cache_Master_Table (to store daily basis records coming from various merchants)`
 
-Component Design:
+**Component Design:**
     
      rt-message-publisher-service
      
