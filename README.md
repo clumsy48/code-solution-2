@@ -80,6 +80,7 @@ Size of each row :
       - getDataByweekAndCountry  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current week vs last week based on Country
       - getDataByMonthAndCountry : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current month vs last month based on Country
       - getDataByYearAndCountry  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current year vs last year based on Country
+      
     operational-data-collector-service (to reprocess history in case of failure)
     
      - Model         : Publisher-Subcsriber Model (Useful in case of reprocess)
@@ -87,7 +88,7 @@ Size of each row :
      - Purpose       : Migrate the old data to new database such every insertion in new the databse will generate an event to download                          that entry from table and reprocess with fixed code plus simultaneously running to process the new data.
                        when we receive an event to reprocess the old data which is already processed , we will switch the rt-Data-                              collector-Service to point to the new datadase.
    
-System-Architecture:
+
 
 
 
