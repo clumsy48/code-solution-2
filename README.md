@@ -26,7 +26,7 @@ Write per day ~ 1 billion
 - Size of databse in one year ~ 360 billion records.
 - Size of database in 10 years ~ 3600 billion records.
 
-Tables :-
+Tables :
 Master_Table  (To store minutes basis records coming from various merchants) 
 Columns: 
 - Localdatetime (HashKey) :String  format (yyyy-MM-ddHH:mm)
@@ -34,7 +34,7 @@ Columns:
 - UserInfo :String
 
 > UserInfo is Json String having data
-> UserId:String , Region (Country:String ,City:String) ,Operating_System:String , Browser:String ,Age : Integer.`
+> UserId:String , Region (Country:String ,City:String) ,Operating_System:String , Browser:String ,Age : Integer.
 
 Size of each row :
 > 15 bytes(LocalDatetime) + 20 bytes (Considering CLientId is 10 chars at most + PageId 10 chars at most ) 
@@ -43,15 +43,13 @@ Size of each row :
 > Size of table in in one day ~ 1000,00,000 * 107 bytes ~= 100gb / day.
 > in next 10 year ~= 360tb
 
-`cache_Master_Table (to store daily basis records coming from various merchants)`
-
 **Component Design:**
-    
+
      rt-message-publisher-service
      
-     Incoming-Data : Merchant Id , Page Url , UserInfo (post request by Merchant)
-     Purpose       : parse incoming post data to suitable message and publish to Notification service (using aws SNS here)
-     Flow diagram  : https://github.com/clumsy48/code-solution-2/blob/master/rt-message-publisher-service.PNG
+     - Incoming-Data : Merchant Id , Page Url , UserInfo (post request by Merchant)
+     - Purpose       : parse incoming post data to suitable message and publish to Notification service (using aws SNS here)
+     - Flow diagram  : https://github.com/clumsy48/code-solution-2/blob/master/rt-message-publisher-service.PNG
      
      rt-data-collector-service
      
@@ -66,11 +64,11 @@ Size of each row :
      
      Data-Retriever-Service:
      
-    Apis: getDataforbyHour  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount of current hour vs last hour
-    Apis: getDataforbyday   : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current day vs last day
-    Apis: getDataforByweek  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current week vs last week
-    Apis: getDataforByMonth : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current month vs last month
-    Apis: getDataforByYear  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current year vs last year
+    - Apis: getDataforbyHour  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount of current hour vs last hour
+    - Apis: getDataforbyday   : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current day vs last day
+    - Apis: getDataforByweek  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current week vs last week
+    - Apis: getDataforByMonth : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current month vs last month
+    - Apis: getDataforByYear  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current year vs last year
     
     operational-data-collector-service (to reprocess history in case of failure)
     
