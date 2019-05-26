@@ -87,9 +87,9 @@ Size of each row :
      - Incoming-Data : Merchant Id , Page Url , UserInfo (message published by rt-message-publisher-service)
      - Purpose       : Migrate the old data to new database such every insertion in new the databse will generate an event to download                          that entry from table and reprocess with fixed code plus simultaneously running to process the new data.
                        when we receive an event to reprocess the old data which is already processed , we will switch the rt-Data-                              collector-Service to point to the new datadase.
+                       Invalidate Cache.
    
-
-
-
-
+**Future Scope:**
+1) Provide Info on count of users spedning time on a particular page.
+2) Implement Cache to improve latency of response of Apis. 
 
