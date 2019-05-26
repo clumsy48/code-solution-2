@@ -2,10 +2,10 @@
 ## HLD for Google Analytics System
 
 **Assunptions:**
-1 ) No. of Active clients + clients added in next 10 years = 100,000.
-2 ) Users of every Client + Users added in next years = 100,00,000.
-3 ) User from same location visted multiple times within 1 min is counted as single visit.
-4 ) 10% users of every client active wihtin a min.
+1) No. of Active clients + clients added in next 10 years = 100,000.
+2) Users of every Client + Users added in next years = 100,00,000.
+3) User from same location visted multiple times within 1 min is counted as single visit.
+4) 10% users of every client active wihtin a min.
 
 **Capacity Estimation and Constraints:**
 `1)Traffic estimates - 1000,00,00,00,00,000 / 1440 ~ 100,00,00,000 per minutes .
