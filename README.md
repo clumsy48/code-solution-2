@@ -64,17 +64,17 @@ Size of each row :
      
      Data-Retriever-Service:
      
-    - Apis: getDataforbyHour  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount of current hour vs last hour
-    - Apis: getDataforbyday   : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current day vs last day
-    - Apis: getDataforByweek  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current week vs last week
-    - Apis: getDataforByMonth : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current month vs last month
-    - Apis: getDataforByYear  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current year vs last year
+     - Apis: getDataforbyHour  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount of current hour vs last hour
+     - Apis: getDataforbyday   : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current day vs last day
+     - Apis: getDataforByweek  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current week vs last week
+     - Apis: getDataforByMonth : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current month vs last month
+     - Apis: getDataforByYear  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current year vs last year
     
     operational-data-collector-service (to reprocess history in case of failure)
     
-    Model         : Publisher-Subcsriber Model (Useful in case of reprocess)
-    Incoming-Data : Merchant Id , Page Url , UserInfo (message published by rt-message-publisher-service)
-    Purpose       : Migrate the old data to new database such every insertion in new the databse will generate an event to download that entry   from table 
+    - Model         : Publisher-Subcsriber Model (Useful in case of reprocess)
+    - Incoming-Data : Merchant Id , Page Url , UserInfo (message published by rt-message-publisher-service)
+    - Purpose       : Migrate the old data to new database such every insertion in new the databse will generate an event to download that entry   from table 
     and reprocess with fixed code plus simultaneously running to process the new data.
     when we receive an event to reprocess the old data which is already processed , we will switch the realtime Data-Collector-Service to 
     point to the new datadase.
