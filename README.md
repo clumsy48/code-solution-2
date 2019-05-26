@@ -32,9 +32,9 @@ Columns:
 - Localdatetime (HashKey) :String  format (yyyy-MM-ddHH:mm)
 - ClientPageID (Sort Key) :String (combination of ClientId + PageUrl(in encoded form))
 - UserInfo :String
-         
-`UserInfo is Json String having data
-UserId:String , Region (Country:String ,City:String) ,Operating_System:String , Browser:String ,Age : Integer.`
+
+> UserInfo is Json String having data
+> UserId:String , Region (Country:String ,City:String) ,Operating_System:String , Browser:String ,Age : Integer.`
 
 Size of each row :
 `15 bytes(LocalDatetime) + 20 bytes (Considering CLientId is 10 chars at most + PageId 10 chars at most ) 
