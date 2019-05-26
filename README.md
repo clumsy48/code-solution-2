@@ -37,11 +37,11 @@ Columns:
 > UserId:String , Region (Country:String ,City:String) ,Operating_System:String , Browser:String ,Age : Integer.`
 
 Size of each row :
-`15 bytes(LocalDatetime) + 20 bytes (Considering CLientId is 10 chars at most + PageId 10 chars at most ) 
-30 bytes (UserId) + 10 bytes (Country) + 10 bytes (City) + 10 bytes (Operating System) + 10 bytes (Browser) + 2 bytes (Age) = 107 bytes`
+> 15 bytes(LocalDatetime) + 20 bytes (Considering CLientId is 10 chars at most + PageId 10 chars at most ) 
+> 30 bytes (UserId) + 10 bytes (Country) + 10 bytes (City) + 10 bytes (Operating System) + 10 bytes (Browser) + 2 bytes (Age) = 107 bytes
 
-`Size of table in in one day ~ 1000,00,000 * 107 bytes ~= 100gb / day.
-in next 10 year ~= 360tb`
+> Size of table in in one day ~ 1000,00,000 * 107 bytes ~= 100gb / day.
+> in next 10 year ~= 360tb
 
 `cache_Master_Table (to store daily basis records coming from various merchants)`
 
