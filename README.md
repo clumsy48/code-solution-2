@@ -62,7 +62,7 @@ Size of each row :
      - Processing    : Running Single thread will need to process  1000,00,000 / 24*60*60 request per second ~= 1158 requests / second.                 
      - Flow diagram  : https://github.com/clumsy48/code-solution-2/blob/master/rt-data-collector-service.PNG
      
-     Data-Retriever-Service:
+     rt-data-Retriever-Service:
      - Scaling       : horizontal scaling will suite for this , since we not updating anything in the db.
                        Scaling parameters : 
                         1) memory.
@@ -72,7 +72,7 @@ Size of each row :
                        By running 10 threads , we can process 10,000 /sec.
                        By scaling horizontly , suppose we use 10 instances we can reduce processing request per second to 1000 /sec.
      - Purpose       : Fetch data from dynamo db based on api fired , process and return to Merchant.
-     - Flow diagram  : https://github.com/clumsy48/code-solution-2/blob/master/rt-data-collector-service.PNG
+     - Flow diagram  : https://github.com/clumsy48/code-solution-2/blob/master/data-retriever-service.JPG
      - Apis:
       1) getDatabyHour  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount of current hour vs last hour
       2) getDatabyday   : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current day vs last day
