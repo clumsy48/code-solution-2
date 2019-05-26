@@ -64,12 +64,22 @@ Size of each row :
      
      Data-Retriever-Service:
      
-     - Apis: getDatabyHour  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount of current hour vs last hour
-     - Apis: getDatabyday   : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current day vs last day
-     - Apis: getDataByweek  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current week vs last week
-     - Apis: getDataByMonth : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current month vs last month
-     - Apis: getDataByYear  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current year vs last year
-    
+      Apis:
+      - getDatabyHour  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount of current hour vs last hour
+      - getDatabyday   : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current day vs last day
+      - getDataByweek  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current week vs last week
+      - getDataByMonth : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current month vs last month
+      - getDataByYear  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current year vs last year
+      - getDatabyHourAndCity  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount of current hour vs last hour based on City
+      - getDatabydayAndCity   : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current day vs last day
+      - getDataByweekAndCity  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current week vs last week based on City
+      - getDataByMonthAndCity : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current month vs last month based on City
+      - getDataByYearAndCity  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current year vs last year based on City
+      - getDatabyHourAndCountry  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount of current hour vs last hour based on Country
+      - getDatabydayAndCountry   : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current day vs last day
+      - getDataByweekAndCountry  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current week vs last week based on Country
+      - getDataByMonthAndCountry : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current month vs last month based on Country
+      - getDataByYearAndCountry  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current year vs last year based on Country
     operational-data-collector-service (to reprocess history in case of failure)
     
      - Model         : Publisher-Subcsriber Model (Useful in case of reprocess)
