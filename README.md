@@ -51,7 +51,7 @@ cache_Master_Table (to store daily basis records coming from various merchants)`
      
      Incoming-Data : Merchant Id , Page Url , UserInfo (post request by Merchant)
      Purpose       : parse incoming post data to suitable message and publish to Notification service (using aws SNS here)
-     Flow diagram  : https://github.com/clumsy48/code-solution-2/blob/master/rt-message-publisher-service.PNG
+     Flow diagram  : [click here](https://github.com/clumsy48/code-solution-2/blob/master/rt-message-publisher-service.PNG)
      
      rt-data-collector-service
      
@@ -62,7 +62,7 @@ cache_Master_Table (to store daily basis records coming from various merchants)`
                     lead to data inconsistency.
                     So ,vertical scaling will the preferred choice .
      Processing    : Running Single thread will need to process  1000,00,000 / 24*60*60 request per second ~= 1158 requests / second.                 
-     Flow diagram  : https://github.com/clumsy48/code-solution-2/blob/master/rt-data-collector-service.PNG
+     Flow diagram  : [click here](https://github.com/clumsy48/code-solution-2/blob/master/rt-data-collector-service.PNG)
      
      Data-Retriever-Service:
      
