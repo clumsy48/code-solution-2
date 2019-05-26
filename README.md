@@ -27,11 +27,11 @@ Write per day ~ 1 billion
 - Size of database in 10 years ~ 3600 billion records.
 
 Tables :-
-`Master_Table  (To store minutes basis records coming from various merchants) 
+Master_Table  (To store minutes basis records coming from various merchants) 
 Columns: 
-Localdatetime (HashKey) :String  format (yyyy-MM-ddHH:mm)
-ClientPageID (Sort Key) :String (combination of ClientId + PageUrl(in encoded form))
-UserInfo :String`
+- Localdatetime (HashKey) :String  format (yyyy-MM-ddHH:mm)
+- ClientPageID (Sort Key) :String (combination of ClientId + PageUrl(in encoded form))
+- UserInfo :String
          
 `UserInfo is Json String having data
 UserId:String , Region (Country:String ,City:String) ,Operating_System:String , Browser:String ,Age : Integer.`
