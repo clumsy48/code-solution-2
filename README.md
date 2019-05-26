@@ -12,9 +12,9 @@
 2) Storage estimates : 360tb (Defined in Database design section)
 
 **Features:**
-`1)Count of users visted a page by minute,day,week,month,year.
-2)Count of users by region , Browser , operating sytem, Gender , Age group (0-10,11-17,18-30,31-40,above 40).
-3)Count of new users vs existing users.`
+1) Count of users visted a page by minute,day,week,month,year.
+2) Count of users by region , Browser , operating sytem, Gender , Age group (0-10,11-17,18-30,31-40,above 40).
+3) Count of new users vs existing users.
 
 **Database Design :**
 `Since we are dealing with large volumes/scale of data and it needs to be highly available , therefore NoSql DyanmoDb will be ideal
@@ -22,9 +22,9 @@ choice for it (there are other nosql database also available like Apache Cassand
 
 Write per day ~ 1 billion
 
-Size of Databse in one month ~ 30 billion records.
-Size of databse in one year ~ 360 billion records.
-Size of database in 10 years ~ 3600 billion records.
+- Size of Databse in one month ~ 30 billion records.
+- Size of databse in one year ~ 360 billion records.
+- Size of database in 10 years ~ 3600 billion records.
 
 Tables :-
 `Master_Table  (To store minutes basis records coming from various merchants) 
