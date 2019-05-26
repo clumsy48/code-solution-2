@@ -51,18 +51,18 @@ in next 10 year ~= 360tb`
      
      Incoming-Data : Merchant Id , Page Url , UserInfo (post request by Merchant)
      Purpose       : parse incoming post data to suitable message and publish to Notification service (using aws SNS here)
-     Flow diagram  : [click here],(https://github.com/clumsy48/code-solution-2/blob/master/rt-message-publisher-service.PNG)
+     Flow diagram  : https://github.com/clumsy48/code-solution-2/blob/master/rt-message-publisher-service.PNG
      
      rt-data-collector-service
      
-     Model         : Publisher-Subcsriber Model (Useful in case of reprocess)
-     Incoming-Data : Merchant Id , Page Url , UserInfo (message published by rt-message-publisher-service)
-     Purpose       : collect data comming from various merchants ,parses it and stores in DB
-     Scaling       : horizontal scaling is a bad idea , since there are so many data coming update database from various instances will
+     - Model         : Publisher-Subcsriber Model (Useful in case of reprocess)
+     - Incoming-Data : Merchant Id , Page Url , UserInfo (message published by rt-message-publisher-service)
+     - Purpose       : collect data comming from various merchants ,parses it and stores in DB
+     - Scaling       : horizontal scaling is a bad idea , since there are so many data coming update database from various instances will
                     lead to data inconsistency.
                     So ,vertical scaling will the preferred choice .
-     Processing    : Running Single thread will need to process  1000,00,000 / 24*60*60 request per second ~= 1158 requests / second.                 
-     Flow diagram  : [click here],(https://github.com/clumsy48/code-solution-2/blob/master/rt-data-collector-service.PNG)
+     - Processing    : Running Single thread will need to process  1000,00,000 / 24*60*60 request per second ~= 1158 requests / second.                 
+     - Flow diagram  : https://github.com/clumsy48/code-solution-2/blob/master/rt-data-collector-service.PNG
      
      Data-Retriever-Service:
      
