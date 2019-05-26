@@ -18,7 +18,7 @@
 
 **Database Design :**
 `Since we are dealing with large volumes/scale of data and it needs to be highly available , therefore NoSql DyanmoDb will be ideal
-choice for it (there are other nosql database also available like Apache Cassandra).
+choice for it (there are other nosql database also available like Apache Cassandra).`
 
 Write per day ~ 1 billion
 
@@ -26,24 +26,24 @@ Size of Databse in one month ~ 30 billion records.
 Size of databse in one year ~ 360 billion records.
 Size of database in 10 years ~ 3600 billion records.
 
-Tables :-
+`Tables :-
 Master_Table  (To store minutes basis records coming from various merchants) 
 Columns: 
 Localdatetime (HashKey) :String  format (yyyy-MM-ddHH:mm)
 ClientPageID (Sort Key) :String (combination of ClientId + PageUrl(in encoded form))
-UserInfo :String
+UserInfo :String`
          
-UserInfo is Json String having data
-UserId:String , Region (Country:String ,City:String) ,Operating_System:String , Browser:String ,Age : Integer.
+`UserInfo is Json String having data
+UserId:String , Region (Country:String ,City:String) ,Operating_System:String , Browser:String ,Age : Integer.`
 
-Size of each row :
+`Size of each row :
 15 bytes(LocalDatetime) + 20 bytes (Considering CLientId is 10 chars at most + PageId 10 chars at most ) 
-30 bytes (UserId) + 10 bytes (Country) + 10 bytes (City) + 10 bytes (Operating System) + 10 bytes (Browser) + 2 bytes (Age) = 107 bytes
+30 bytes (UserId) + 10 bytes (Country) + 10 bytes (City) + 10 bytes (Operating System) + 10 bytes (Browser) + 2 bytes (Age) = 107 bytes`
 
-Size of table in in one day ~ 1000,00,000 * 107 bytes ~= 100gb / day.
-in next 10 year ~= 360tb
+`Size of table in in one day ~ 1000,00,000 * 107 bytes ~= 100gb / day.
+in next 10 year ~= 360tb`
 
-cache_Master_Table (to store daily basis records coming from various merchants)`
+`cache_Master_Table (to store daily basis records coming from various merchants)`
 
 **Component Design:**
     
