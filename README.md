@@ -59,8 +59,15 @@ rt-data-collector-service
                     lead to data inconsistency.
                     So ,vertical scaling will the preferred choice .
               
-     Processing    : Running Single thread will need to process  1000,00,000 / 24*60*60 request per second ~= 1158 requests / second.
      
+     Model         : Publisher-Subcsriber Model (Useful in case of reprocess)
+     Incoming-Data : Merchant Id , Page Url , UserInfo (message published by rt-message-publisher-service)
+     Purpose       : collect data comming from various merchants ,parses it and stores in DB
+     Scaling       : horizontal scaling is a bad idea , since there are so many data coming update database from various instances will
+                    lead to data inconsistency.
+                    So ,vertical scaling will the preferred choice .
+     Processing    : Running Single thread will need to process  1000,00,000 / 24*60*60 request per second ~= 1158                                            requests / second.
+     Flow diagram  : https://github.com/clumsy48/code-solution-2/blob/master/rt-data-collector-service.PNG
      
 Data-Retriever-Service:
     Apis: getDataforbyHour  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount of current hour vs last hour
