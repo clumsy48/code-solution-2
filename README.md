@@ -63,23 +63,32 @@ Size of each row :
      - Flow diagram  : https://github.com/clumsy48/code-solution-2/blob/master/rt-data-collector-service.PNG
      
      Data-Retriever-Service:
-     
-      Apis:
-      - getDatabyHour  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount of current hour vs last hour
-      - getDatabyday   : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current day vs last day
-      - getDataByweek  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current week vs last week
-      - getDataByMonth : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current month vs last month
-      - getDataByYear  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current year vs last year
-      - getDatabyHourAndCity  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount of current hour vs last hour based on City
-      - getDatabydayAndCity   : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current day vs last day
-      - getDataByweekAndCity  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current week vs last week based on City
-      - getDataByMonthAndCity : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current month vs last month based on City
-      - getDataByYearAndCity  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current year vs last year based on City
-      - getDatabyHourAndCountry  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount of current hour vs last hour based on Country
-      - getDatabydayAndCountry   : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current day vs last day
-      - getDataByweekAndCountry  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current week vs last week based on Country
-      - getDataByMonthAndCountry : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current month vs last month based on Country
-      - getDataByYearAndCountry  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current year vs last year based on Country
+     - Scaling       : horizontal scaling will suite for this , since we not updating anything in the db.
+                       Scaling parameters : 
+                        1) memory.
+                        2) requests.
+     - Processing    : In a sec, we can max of 100,000 requests . 
+                       Using single thread , we will need to process 100,000 / sec.
+                       By running 10 threads , we can process 10,000 /sec.
+                       By scaling horizontly , suppose we use 10 instances we can reduce processing request per second to 1000 /sec.
+     - Purpose       : Fetch data from dynamo db based on api fired , process and return to Merchant.
+     - Flow diagram  : https://github.com/clumsy48/code-solution-2/blob/master/rt-data-collector-service.PNG
+     - Apis:
+      1) getDatabyHour  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount of current hour vs last hour
+      2) getDatabyday   : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current day vs last day
+      3) getDataByweek  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current week vs last week
+      4) getDataByMonth : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current month vs last month
+      5) getDataByYear  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current year vs last year
+      6) getDatabyHourAndCity  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount of current hour vs last hour based on City
+      7) getDatabydayAndCity   : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current day vs last day
+      8) getDataByweekAndCity  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current week vs last week based on City
+      9) getDataByMonthAndCity : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current month vs last month based on City
+      10) getDataByYearAndCity  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current year vs last year based on City
+      11) getDatabyHourAndCountry  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount of current hour vs last hour based on Country
+      12) getDatabydayAndCountry   : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current day vs last day
+      13) getDataByweekAndCountry  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current week vs last week based on Country
+      14) getDataByMonthAndCountry : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current month vs last month based on Country
+      15) getDataByYearAndCountry  : Merchant Id , Page Url  Response : TotalUserCount , newUserCount , oldUserCount current year vs last year based on Country
       
     operational-data-collector-service (to reprocess history in case of failure)
     
